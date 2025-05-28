@@ -11,6 +11,16 @@ function divide(a, b) {
   return a / b;
 }
 
+function subtract(a, b) {
+  return a - b;
+}
+
+function isEven(n) {
+  return n % 2 === 0;
+}
+
+
+
 const average = (values) => {
   const valuesLength = values.length;
   if (valuesLength === 0) return 0;
@@ -24,4 +34,6 @@ module.exports = {
   multiply,
   divide,
   average,
+  subtract,
+  isEven
 };
