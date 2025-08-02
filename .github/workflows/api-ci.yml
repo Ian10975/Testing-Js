@@ -19,11 +19,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 22
-          cache: 'npm'
+          cache: npm
           cache-dependency-path: api/package-lock.json
+          cache-key: custom-node22-${{ hashFiles('api/package-lock.json') }}
 
       - name: Install dependencies
         run: npm ci
