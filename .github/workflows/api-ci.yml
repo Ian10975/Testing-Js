@@ -4,6 +4,7 @@ on:
     paths:
       - 'api/**'
       - '.github/workflows/api-ci.yml'
+  workflow_dispatch:
 
 jobs:
   unit-testing:
@@ -22,12 +23,10 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
-          cache-dependency-path: package-lock.json
+          cache-dependency-path: api/package-lock.json
 
       - name: Install dependencies
         run: npm ci
 
-
       - name: Run unit tests
         run: npm run test:ci
-
